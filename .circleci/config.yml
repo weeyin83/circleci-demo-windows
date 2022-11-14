@@ -10,10 +10,10 @@ workflows:
       - build
   tagged-build:
     jobs:
-      - build
+      - build:
           filters:
-            tags:
-              only: /^v.*/
+              tags:
+                only: /^v.*/
   integration-tests:
   untagged-build:
     jobs:
@@ -21,11 +21,15 @@ workflows:
       - ui-tests
   tagged-build:
     jobs:
-      - browser-tests
-      - ui-tests
-          filters:
-            tags:
-              only: /^v.*/
+      - browser-tests:
+            filters:
+              tags:
+                only: /^v.*/
+      - ui-tests:
+            filters:
+              tags:
+                only: /^v.*/
+
 jobs:
   build:
     executor:
