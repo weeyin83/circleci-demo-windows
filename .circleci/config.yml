@@ -5,13 +5,27 @@ orbs:
 
 workflows:
   hello-world:
+  untagged-build:
     jobs:
       - build
+  tagged-build:
+    jobs:
+      - build
+          filters:
+            tags:
+              only: /^v.*/
   integration-tests:
+  untagged-build:
     jobs:
       - browser-tests
       - ui-tests
-
+  tagged-build:
+    jobs:
+      - browser-tests
+      - ui-tests
+          filters:
+            tags:
+              only: /^v.*/
 jobs:
   build:
     executor:
