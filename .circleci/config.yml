@@ -8,27 +8,16 @@ workflows:
   untagged-build:
     jobs:
       - build
-  tagged-build:
+    tagged-build:
     jobs:
       - build:
           filters:
-              tags:
-                only: /^v.*/
+            tags:
+              only: /^v.*/
   integration-tests:
-  untagged-build:
     jobs:
       - browser-tests
       - ui-tests
-  tagged-build:
-    jobs:
-      - browser-tests:
-            filters:
-              tags:
-                only: /^v.*/
-      - ui-tests:
-            filters:
-              tags:
-                only: /^v.*/
 
 jobs:
   build:
