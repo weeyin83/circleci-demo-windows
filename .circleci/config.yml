@@ -8,7 +8,7 @@ workflows:
   untagged-build:
     jobs:
       - build
-    tagged-build:
+  tagged-build:
     jobs:
       - build:
           filters:
