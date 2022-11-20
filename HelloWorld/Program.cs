@@ -8,7 +8,7 @@ namespace circleci_demo_windows
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!", Color.Green);
+            Console.WriteLine("Hello World from Sarah!", Color.Green);
         }
     }
 }
