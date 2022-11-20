@@ -4,19 +4,12 @@ orbs:
   win: circleci/windows@2.4.0
 
 workflows:
-  untagged-build:
-    jobs:
-      - build
   tagged-build:
     jobs:
       - build:
           filters:
             tags:
               only: /^v.*/
-  integration-tests:
-    jobs:
-      - browser-tests
-      - ui-tests
 
 jobs:
   build:
